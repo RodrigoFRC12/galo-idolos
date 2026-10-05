@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ídolos do Galo — Atlético Mineiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="crest" aria-hidden="true">⚫⚪</p>
+      <div class="title-block">
+        <h1>Ídolos do Galo</h1>
+        <p class="subtitle">Um acervo dos jogadores que marcaram a história do Clube Atlético Mineiro</p>
+      </div>
+    </div>
+
+    <nav class="site-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#idolos">Ídolos</a></li>
+        <li><a href="#cadastro">Cadastrar ídolo</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Identificação do sistema -->
+    <section id="inicio" class="hero">
+      <article>
+        <h2>Massa, caneco e memória</h2>
+        <p>
+          Este site reúne os nomes que vestiram a camisa alvinegra com a maior entrega:
+          artilheiros, capitães e craques que se tornaram parte da identidade do clube.
+          Navegue pelos perfis, cadastre novos ídolos e teste seus conhecimentos no quiz.
+        </p>
+      </article>
+      <dl class="hero-stats">
+        <div>
+          <dt>Ídolos catalogados</dt>
+          <dd>4</dd>
+        </div>
+        <div>
+          <dt>Décadas cobertas</dt>
+          <dd>1970 – hoje</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Cadastro da entidade principal -->
+    <section id="cadastro" aria-labelledby="cadastro-titulo">
+      <h2 id="cadastro-titulo">Cadastrar novo ídolo</h2>
+
+      <form id="form-idolo">
+        <div class="form-row">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex: Reinaldo" required>
+        </div>
+
+        <div class="form-row">
+          <label for="posicao">Posição</label>
+          <select id="posicao" name="posicao" required>
+            <option value="">Selecione</option>
+            <option value="goleiro">Goleiro</option>
+            <option value="zagueiro">Zagueiro</option>
+            <option value="lateral">Lateral</option>
+            <option value="meio-campo">Meio-campo</option>
+            <option value="atacante">Atacante</option>
+          </select>
+        </div>
+
+        <div class="form-row form-row-split">
+          <div>
+            <label for="ano-inicio">Início no clube</label>
+            <input type="number" id="ano-inicio" name="ano-inicio" min="1908" max="2026" placeholder="1977">
+          </div>
+          <div>
+            <label for="ano-fim">Fim no clube</label>
+            <input type="number" id="ano-fim" name="ano-fim" min="1908" max="2026" placeholder="1985">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label for="titulos">Títulos conquistados</label>
+          <textarea id="titulos" name="titulos" rows="3" placeholder="Ex: Campeonato Mineiro (1978, 1980, 1983)"></textarea>
+        </div>
+
+        <div class="form-row">
+          <label for="foto">Foto do ídolo</label>
+          <input type="file" id="foto" name="foto" accept="image/*">
+        </div>
+
+        <div class="form-actions">
+          <button type="submit">Cadastrar ídolo</button>
+          <button type="reset" class="btn-secondary">Limpar campos</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Visualização, pesquisa, filtro e ordenação -->
+    <section id="idolos" aria-labelledby="idolos-titulo">
+      <h2 id="idolos-titulo">Galeria de ídolos</h2>
+
+      <form class="toolbar" role="search">
+        <div class="form-row">
+          <label for="pesquisa">Pesquisar</label>
+          <input type="search" id="pesquisa" name="pesquisa" placeholder="Buscar por nome...">
+        </div>
+
+        <div class="form-row">
+          <label for="filtro-posicao">Filtrar por posição</label>
+          <select id="filtro-posicao" name="filtro-posicao">
+            <option value="todas">Todas</option>
+            <option value="goleiro">Goleiro</option>
+            <option value="zagueiro">Zagueiro</option>
+            <option value="lateral">Lateral</option>
+            <option value="meio-campo">Meio-campo</option>
+            <option value="atacante">Atacante</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="ordenar">Ordenar por</label>
+          <select id="ordenar" name="ordenar">
+            <option value="nome">Nome (A–Z)</option>
+            <option value="ano-inicio">Ano de chegada</option>
+          </select>
+        </div>
+      </form>
+
+      <ul class="idol-grid">
+
+        <li class="idol-card">
+          <p class="idol-initials" aria-hidden="true">RE</p>
+          <h3>Reinaldo</h3>
+          <p class="idol-meta">Atacante · 1977–1985</p>
+          <p class="idol-titles">Campeonato Mineiro (1978, 1980, 1983)</p>
+          <div class="card-actions">
+            <a href="#detalhes" class="btn-link">Ver detalhes</a>
+            <button type="button" class="btn-icon">Editar</button>
+            <button type="button" class="btn-icon btn-danger">Excluir</button>
+          </div>
+        </li>
+
+        <li class="idol-card">
+          <p class="idol-initials" aria-hidden="true">DM</p>
+          <h3>Dadá Maravilha</h3>
+          <p class="idol-meta">Atacante · 1971–1976</p>
+          <p class="idol-titles">Artilheiro histórico do clube</p>
+          <div class="card-actions">
+            <a href="#detalhes" class="btn-link">Ver detalhes</a>
+            <button type="button" class="btn-icon">Editar</button>
+            <button type="button" class="btn-icon btn-danger">Excluir</button>
+          </div>
+        </li>
+
+        <li class="idol-card">
+          <p class="idol-initials" aria-hidden="true">RG</p>
+          <h3>Ronaldinho Gaúcho</h3>
+          <p class="idol-meta">Meio-campo · 2012–2014</p>
+          <p class="idol-titles">Copa Libertadores da América (2013)</p>
+          <div class="card-actions">
+            <a href="#detalhes" class="btn-link">Ver detalhes</a>
+            <button type="button" class="btn-icon">Editar</button>
+            <button type="button" class="btn-icon btn-danger">Excluir</button>
+          </div>
+        </li>
+
+        <li class="idol-card">
+          <p class="idol-initials" aria-hidden="true">HU</p>
+          <h3>Hulk</h3>
+          <p class="idol-meta">Atacante · 2019–2023</p>
+          <p class="idol-titles">Campeonato Mineiro (2020, 2021, 2022)</p>
+          <div class="card-actions">
+            <a href="#detalhes" class="btn-link">Ver detalhes</a>
+            <button type="button" class="btn-icon">Editar</button>
+            <button type="button" class="btn-icon btn-danger">Excluir</button>
+          </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- Visualização de detalhes de um item -->
+    <section id="detalhes" aria-labelledby="detalhes-titulo">
+      <h2 id="detalhes-titulo">Detalhes do ídolo</h2>
+
+      <article class="idol-detail">
+        <p class="idol-initials idol-initials-large" aria-hidden="true">RE</p>
+        <div>
+          <h3>Reinaldo</h3>
+          <table class="detail-table">
+            <tbody>
+              <tr>
+                <th scope="row">Posição</th>
+                <td>Atacante</td>
+              </tr>
+              <tr>
+                <th scope="row">Período no clube</th>
+                <td>1977 a 1985</td>
+              </tr>
+              <tr>
+                <th scope="row">Títulos</th>
+                <td>Campeonato Mineiro (1978, 1980, 1983)</td>
+              </tr>
+              <tr>
+                <th scope="row">Destaque</th>
+                <td>Recordista de gols em uma única edição do Campeonato Brasileiro</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" aria-labelledby="quiz-titulo">
+      <h2 id="quiz-titulo">Quiz: você conhece os ídolos do Galo?</h2>
+      <p class="section-intro">Responda às perguntas abaixo e descubra o quanto você manja da história alvinegra.</p>
+
+      <form id="form-quiz">
+        <fieldset>
+          <legend>1. Quem é o artilheiro histórico do Atlético Mineiro?</legend>
+          <label><input type="radio" name="pergunta1" value="a"> Reinaldo</label>
+          <label><input type="radio" name="pergunta1" value="b"> Dadá Maravilha</label>
+          <label><input type="radio" name="pergunta1" value="c"> Guga</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Em que ano o Atlético conquistou sua primeira Copa Libertadores?</legend>
+          <label><input type="radio" name="pergunta2" value="a"> 2012</label>
+          <label><input type="radio" name="pergunta2" value="b"> 2013</label>
+          <label><input type="radio" name="pergunta2" value="c"> 2021</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Qual ídolo jogou no clube entre 2019 e 2023?</legend>
+          <label><input type="radio" name="pergunta3" value="a"> Hulk</label>
+          <label><input type="radio" name="pergunta3" value="b"> Ronaldinho Gaúcho</label>
+          <label><input type="radio" name="pergunta3" value="c"> Reinaldo</label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit">Ver resultado</button>
+        </div>
+      </form>
+
+      <p id="quiz-resultado" class="quiz-resultado" hidden></p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Projeto acadêmico — Ídolos do Galo. Dados utilizados apenas para fins de estudo.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
